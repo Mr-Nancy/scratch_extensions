@@ -41,8 +41,8 @@ new (function() {
         };
         xmlhttp.send();
 
-        //return myObj.data.temperature;
-        callback(JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature);
+        callback(myObj.data.temperature);
+        //callback(JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature);
     };
 
     ext.power = function(base, exponent) {
