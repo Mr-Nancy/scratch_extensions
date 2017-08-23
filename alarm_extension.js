@@ -58,7 +58,7 @@ new (function() {
     var descriptor = {
         blocks: [
             ['r', '%n ^ %n', 'power', 2, 3],
-            ['R', 'current temperature in city %s', 'getTemperature', 'Boston'],
+            ['r', 'current temperature in city %s', 'getTemperature', 'Boston'],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
