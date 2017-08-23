@@ -33,6 +33,15 @@ new (function() {
 
     ext.getTemperature = function(city) {
         var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+            }
+        };
+        xmlhttp.open("GET", "https://weathers.co/api.php?city=Boston", true);
+        xmlhttp.send();
+
+        return myObj.data.temperature
     };
 
     ext.power = function(base, exponent) {
