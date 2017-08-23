@@ -33,7 +33,7 @@ new (function() {
 
     ext.getTemperature = function(city, callback) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "http://weathers.co/api.php?city=" + city, true);
+        xmlhttp.open("GET", "http://weathers.co/api.php?city="+city, true);
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
