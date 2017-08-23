@@ -31,7 +31,7 @@ new (function() {
        return false;
     };
 
-    ext.getTemperature = function(city) {
+    ext.getTemperature = function(city, callback) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "http://weathers.co/api.php?city=Boston", true);
         xmlhttp.onreadystatechange = function() {
@@ -42,7 +42,7 @@ new (function() {
         xmlhttp.send();
 
         //return myObj.data.temperature;
-        return JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature;
+        callback(JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature);
     };
 
     ext.power = function(base, exponent) {
