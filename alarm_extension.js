@@ -37,11 +37,10 @@ new (function() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
+                callback(myObj.data.temperature);
             }
         };
         xmlhttp.send();
-
-        callback(myObj.data.temperature);
         //callback(JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature);
     };
 
