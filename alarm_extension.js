@@ -32,16 +32,17 @@ new (function() {
     };
 
     ext.getTemperature = function(city) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var myObj = JSON.parse(this.responseText);
-            }
-        };
-        xmlhttp.open("GET", "http://weathers.co/api.php?city=Boston", true);
-        xmlhttp.send();
+        //var xmlhttp = new XMLHttpRequest();
+        //xmlhttp.onreadystatechange = function() {
+        //    if (this.readyState == 4 && this.status == 200) {
+        //        var myObj = JSON.parse(this.responseText);
+        //    }
+        //};
+        //xmlhttp.open("GET", "http://weathers.co/api.php?city=Boston", true);
+        //xmlhttp.send();
 
-        return myObj.data.temperature;
+        //return myObj.data.temperature;
+        return JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature;
     };
 
     ext.power = function(base, exponent) {
