@@ -31,7 +31,7 @@ new (function() {
        return false;
     };
 
-    ext.getTemperature = function() {
+    ext.getTemperature = function(city) {
         var xmlhttp = new XMLHttpRequest();
     };
 
