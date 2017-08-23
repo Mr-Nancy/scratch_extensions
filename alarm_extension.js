@@ -32,14 +32,14 @@ new (function() {
     };
 
     ext.getTemperature = function(city) {
-        //var xmlhttp = new XMLHttpRequest();
-        //xmlhttp.onreadystatechange = function() {
-        //    if (this.readyState == 4 && this.status == 200) {
-        //        var myObj = JSON.parse(this.responseText);
-        //    }
-        //};
-        //xmlhttp.open("GET", "http://weathers.co/api.php?city=Boston", true);
-        //xmlhttp.send();
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "http://weathers.co/api.php?city=Boston", true);
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+            }
+        };
+        xmlhttp.send();
 
         //return myObj.data.temperature;
         return JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature;
@@ -58,7 +58,7 @@ new (function() {
     var descriptor = {
         blocks: [
             ['r', '%n ^ %n', 'power', 2, 3],
-            ['r', 'current temperature in city %s', 'getTemperature', 'Boston'],
+            ['R', 'current temperature in city %s', 'getTemperature', 'Boston'],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
