@@ -39,10 +39,16 @@ new (function() {
         return Math.pow(base, exponent);
     };
 
+
+    ext.power = function(base, exponent) {
+        return Math.pow(base, exponent);
+    };
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature in city %s', 'getTemperature', 'Boston, MA'],
+            ['r', '%n ^ %n', 'power', 2, 3],
+            ['R', 'current temperature in city %s', 'getTemperature', 'Boston'],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
