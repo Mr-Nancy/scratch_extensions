@@ -38,7 +38,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'temperature', 'getTemperature'],
+            ['R', 'temperature', 'getTemperature', 'Boston'],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
