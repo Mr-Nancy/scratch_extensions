@@ -41,7 +41,7 @@ new (function() {
         xmlhttp.open("GET", "https://weathers.co/api.php?city=Boston", true);
         xmlhttp.send();
 
-        return myObj.data.temperature
+        return myObj.data.temperature;
     };
 
     ext.power = function(base, exponent) {
