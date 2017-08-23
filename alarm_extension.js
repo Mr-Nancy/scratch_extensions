@@ -35,10 +35,14 @@ new (function() {
         var xmlhttp = new XMLHttpRequest();
     };
 
+    ext.power = function(base, exponent) {
+        return Math.pow(base, exponent);
+    };
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'temperature', 'getTemperature', 'Boston'],
+            ['R', 'current temperature in city %s', 'getTemperature', 'Boston, MA'],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
