@@ -29,7 +29,7 @@ new (function() {
        return false;
     };
 
-    ext.getQuote = function(city, callback) {
+    ext.getQuote = function(callback) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "https://quotes.rest/qod", true);
         xmlhttp.onreadystatechange = function() {
