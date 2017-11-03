@@ -37,7 +37,7 @@ new (function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
 //                //callback(myObj.data.temperature);
-                callback(this.responseText);
+                callback(myObj.contents.quotes[0]);
             }
         };
         xmlhttp.send();
