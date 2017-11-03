@@ -29,7 +29,7 @@ new (function() {
        return false;
     };
 
-    ext.getQuote = function(callback, category) {
+    ext.getQuote = function(category, callback) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "https://quotes.rest/qod?category="+category, true);
         xmlhttp.onreadystatechange = function() {
