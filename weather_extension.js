@@ -30,27 +30,17 @@ new (function() {
     };
 
     ext.getTemperature = function(city, callback) {
-        //var xmlhttp = new XMLHttpRequest();
-        var jsonhttp = new JSONHttpRequest();
+        var xmlhttp = new XMLHttpRequest();
         //xmlhttp.open("GET", "http://weathers.co/api.php?city="+city, true);
-        jsonhttp.open("GET", "https://quotes.rest/qod", true);
-        jsonhttp.onreadystatechange = function() {
+        xmlhttp.open("GET", "https://quotes.rest/qod", true);
+        xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
-                //callback(myObj.data.temperature);
+//                //callback(myObj.data.temperature);
                 callback(this.responseText);
             }
         };
-
-//        xmlhttp.onreadystatechange = function() {
-//            if (this.readyState == 4 && this.status == 200) {
-//                var myObj = JSON.parse(this.responseText);
-//                //callback(myObj.data.temperature);
-//                callback(this.responseText);
-//            }
-//        };
-//        xmlhttp.send();
-        jsonhttp.send();
+        xmlhttp.send();
     };
 
     ext.power = function(base, exponent) {
