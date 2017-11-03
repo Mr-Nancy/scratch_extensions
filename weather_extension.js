@@ -31,11 +31,13 @@ new (function() {
 
     ext.getTemperature = function(city, callback) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "http://weathers.co/api.php?city="+city, true);
+        //xmlhttp.open("GET", "http://weathers.co/api.php?city="+city, true);
+        xmlhttp.open("GET", "http://samples.openweathermap.org/data/2.5/weather?q=" + city + ",uk&appid=b1b15e88fa797225412429c1c50c122a1");
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
-                callback(myObj.data.temperature);
+                //callback(myObj.data.temperature);
+                callback(myObj.temp);
             }
         };
         xmlhttp.send();
