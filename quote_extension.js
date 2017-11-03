@@ -29,9 +29,9 @@ new (function() {
        return false;
     };
 
-    ext.getQuote = function(category, callback) {
+    ext.getQuote = function(category) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "https://quotes.rest/qod?category="+category, true);
+        xmlhttp.open("GET", "https://quotes.rest/qod", true);
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
