@@ -1,5 +1,3 @@
-/* Extension demonstrating a hat block */
-/* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
 
 new (function() {
     var ext = this;
@@ -41,7 +39,6 @@ new (function() {
             }
         };
         xmlhttp.send();
-        //callback(JSON.parse("{\"apiVersion\":\"1.0\", \"data\":{ \"location\":\"Boston\", \"temperature\":\"28\"} }").data.temperature);
     };
 
     ext.power = function(base, exponent) {
