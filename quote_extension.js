@@ -29,9 +29,9 @@ new (function() {
        return false;
     };
 
-    ext.getQuote = function(callback) {
+    ext.getQuote = function(callback, category) {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "https://quotes.rest/qod", true);
+        xmlhttp.open("GET", "https://quotes.rest/qod?category="+category, true);
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
@@ -44,7 +44,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Get Today Wizdom!', 'getQuote'],
+            ['R', 'Get Today Wizdom in the Category %s', 'getQuote', "Category"],
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
         ]
